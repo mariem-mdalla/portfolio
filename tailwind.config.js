@@ -1,0 +1,48 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      colors: {
+        bg: 'var(--color-bg)',
+        'bg-alt': 'var(--color-bg-alt)',
+        surface: 'var(--color-surface)',
+        'surface-elevated': 'var(--color-surface-elevated)',
+        primary: 'var(--color-primary)',
+        'primary-light': 'var(--color-primary-light)',
+        'primary-dark': 'var(--color-primary-dark)',
+        secondary: 'var(--color-secondary)',
+        'secondary-soft': 'var(--color-secondary-soft)',
+        accent: 'var(--color-accent)',
+        'accent-soft': 'var(--color-accent-soft)',
+        'text-main': 'var(--color-text)',
+        'text-muted': 'var(--color-text-muted)',
+        'text-inverse': 'var(--color-text-inverse)',
+        border: 'var(--color-border)',
+        'border-strong': 'var(--color-border-strong)',
+        key: 'var(--color-key-base)',
+        'key-top': 'var(--color-key-top)',
+        'key-side': 'var(--color-key-side)',
+        'key-highlight': 'var(--color-key-highlight)',
+        'window-bg': 'var(--color-window-bg)',
+        'window-header': 'var(--color-window-header)',
+        'terminal-bg': 'var(--color-terminal-bg)',
+        'terminal-text': 'var(--color-terminal-text)',
+      },
+      boxShadow: {
+        soft: '0 2px 12px var(--color-shadow)',
+        medium: '0 8px 30px var(--color-shadow)',
+        strong: '0 12px 50px var(--color-shadow-strong)',
+        'key-3d': '0 1px 0 var(--color-key-side), 0 2px 0 var(--color-key-side), 0 4px 0 var(--color-key-side), 0 5px 8px var(--color-shadow-strong)',
+        'key-3d-pressed': '0 1px 0 var(--color-key-side), 0 2px 0 var(--color-key-side), 0 2px 4px var(--color-shadow)',
+        'key-highlight-3d': '0 1px 0 #c9a82e, 0 2px 0 #c9a82e, 0 4px 0 #c9a82e, 0 5px 12px var(--color-shadow-strong)',
+      },
+    },
+  },
+  plugins: [],
+};

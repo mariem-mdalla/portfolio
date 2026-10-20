@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================
+   PALETTE A - Marine / Butter / Ivory
+   ============================ */
+:root,
+[data-theme='marine'] {
+  --color-bg: #f4eee0;
+  --color-bg-alt: #ece5d4;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #fffdf8;
+  --color-primary: #1b3a5c;
+  --color-primary-light: #2d5a8c;
+  --color-primary-dark: #102640;
+  --color-secondary: #f0c93f;
+  --color-secondary-soft: #f7dd6a;
+  --color-accent: #1b3a5c;
+  --color-accent-soft: #e8a85c;
+  --color-text: #1b3a5c;
+  --color-text-muted: #6b8299;
+  --color-text-inverse: #f4eee0;
+  --color-border: rgba(27, 58, 92, 0.12);
+  --color-border-strong: rgba(27, 58, 92, 0.22);
+  --color-shadow: rgba(27, 58, 92, 0.08);
+  --color-shadow-strong: rgba(27, 58, 92, 0.18);
+  --color-key-base: #2a4d72;
+  --color-key-top: #356191;
+  --color-key-side: #1e3d62;
+  --color-key-highlight: #f0c93f;
+  --color-window-bg: #fffdf8;
+  --color-window-header: #ece5d4;
+  --color-terminal-bg: #162d4a;
+  --color-terminal-text: #f7dd6a;
+  --gradient-hero: linear-gradient(160deg, #f4eee0 0%, #ece5d4 40%, #ddd4be 100%);
+  --gradient-card: linear-gradient(135deg, #fffdf8 0%, #f7f3e8 100%);
+}
+
+/* ============================
+   PALETTE B - Chocolate / Peony / Vanilla
+   ============================ */
+[data-theme='cocoa'] {
+  --color-bg: #f5ebd8;
+  --color-bg-alt: #ece0c8;
+  --color-surface: #fffaf2;
+  --color-surface-elevated: #fffdf8;
+  --color-primary: #4a3020;
+  --color-primary-light: #6b4a30;
+  --color-primary-dark: #2e1d12;
+  --color-secondary: #e08aa0;
+  --color-secondary-soft: #ecb0c0;
+  --color-accent: #4a3020;
+  --color-accent-soft: #c98a5e;
+  --color-text: #4a3020;
+  --color-text-muted: #9a7a62;
+  --color-text-inverse: #f5ebd8;
+  --color-border: rgba(74, 48, 32, 0.12);
+  --color-border-strong: rgba(74, 48, 32, 0.22);
+  --color-shadow: rgba(74, 48, 32, 0.08);
+  --color-shadow-strong: rgba(74, 48, 32, 0.18);
+  --color-key-base: #5a3a28;
+  --color-key-top: #6e4a32;
+  --color-key-side: #3e2618;
+  --color-key-highlight: #e08aa0;
+  --color-window-bg: #fffaf2;
+  --color-window-header: #ece0c8;
+  --color-terminal-bg: #2e1d12;
+  --color-terminal-text: #ecb0c0;
+  --gradient-hero: linear-gradient(160deg, #f5ebd8 0%, #ece0c8 40%, #dccfb0 100%);
+  --gradient-card: linear-gradient(135deg, #fffaf2 0%, #f7eed8 100%);
+}
+
+/* ============================
+   BASE STYLES
+   ============================ */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+}
+
+/* ============================
+   SCROLLBAR
+   ============================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ============================
+   SCROLL REVEAL ANIMATIONS
+   ============================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================
+   KEYBOARD 3D STYLES
+   ============================ */
+.keyboard-scene {
+  perspective: 1200px;
+  perspective-origin: 50% 30%;
+}
+
+.keyboard-tilt {
+  transform: rotateX(18deg) rotateZ(-2deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.key-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+  will-change: transform;
+}
+
+.key-3d:hover {
+  transform: translateY(3px);
+}
+
+.key-3d:active,
+.key-3d.pressed {
+  transform: translateY(6px);
+}
+
+/* ============================
+   FLOATING WINDOW STYLES
+   ============================ */
+.float-window {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.float-window:hover {
+  transform: translateY(-4px) rotateX(2deg);
+}
+
+/* ============================
+   FADE IN UP (mobile menu)
+   ============================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================
+   UTILITY ANIMATIONS
+   ============================ */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-secondary); }
+  50% { box-shadow: 0 0 20px 4px var(--color-secondary); opacity: 0.7; }
+}
+
+.animate-float-soft {
+  animation: float-soft 4s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ============================
+   REDUCED MOTION
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .keyboard-tilt {
+    transform: rotateX(8deg) !important;
+  }
+}
+
+/* ============================
+   FOCUS STATES
+   ============================ */
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================
+   NO SCROLLBAR UTILITY
+   ============================ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
