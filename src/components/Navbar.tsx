@@ -4,8 +4,8 @@ import { useScrolled } from '@/hooks/useScrolled';
 import { PaletteSwitcher } from '@/components/PaletteSwitcher';
 
 const NAV_LINKS = [
-  { label: 'Projects', href: '#projects' },
   { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Toolkit', href: '#toolkit' },
   { label: 'Journey', href: '#journey' },
   { label: 'Contact', href: '#contact' },

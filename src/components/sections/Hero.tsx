@@ -4,8 +4,8 @@ import { Keyboard3D } from '@/components/Keyboard3D';
 import { CodeWindow, TerminalWindow, BrowserWindow } from '@/components/FloatingWindows';
 
 export function Hero() {
-  const scrollToProjects = useCallback(() => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToAbout = useCallback(() => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   return (
@@ -71,13 +71,13 @@ export function Hero() {
           {/* Keyboard */}
           <div className="mt-8 sm:mt-10 w-full overflow-x-auto no-scrollbar">
             <div className="min-w-[680px] mx-auto">
-              <Keyboard3D onEnterClick={scrollToProjects} />
+              <Keyboard3D onEnterClick={scrollToAbout} />
             </div>
           </div>
 
           {/* Hint */}
           <button
-            onClick={scrollToProjects}
+            onClick={scrollToAbout}
             className="group mt-6 flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
           >
             <span>Click Enter to explore</span>

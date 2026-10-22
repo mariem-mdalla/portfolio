@@ -30,7 +30,7 @@ const CATEGORIES: SkillCategory[] = [
   {
     icon: ShieldCheck,
     title: 'Exploring & Fundamentals',
-    skills: ['Cybersecurity Concepts', 'Linux Fundamentals', 'Network Security', 'Cryptography', 'Deep Learning Basics'],
+    skills: ['Cybersecurity Concepts', 'Linux Fundamentals', 'Network Security'],
     variant: 'outline',
   },
 ];

@@ -112,7 +112,7 @@ export function Projects() {
           <div className="flex items-center gap-3 mb-2">
             <FolderGit2 size={24} className="text-secondary" />
             <span className="font-mono text-sm text-text-muted uppercase tracking-widest">
-              01 - Selected Work
+              02 - Selected Work
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary">

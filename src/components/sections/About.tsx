@@ -12,7 +12,7 @@ export function About() {
           <div className="flex items-center gap-3 mb-2">
             <User size={24} className="text-secondary" />
             <span className="font-mono text-sm text-text-muted uppercase tracking-widest">
-              02 - About
+              01 - About
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary">
